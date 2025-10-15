@@ -13,7 +13,7 @@ public class CreateUserUseCaseImpl implements CreateUserUseCase {
 
     @Override
     public User execute(User user) {
-        return userGateway.CreateUserUseCase(user);
+        return userGateway.createUserUseCase(user);
     }
 
 }

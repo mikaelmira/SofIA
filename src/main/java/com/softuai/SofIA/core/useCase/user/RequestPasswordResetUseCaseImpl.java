@@ -12,7 +12,7 @@ public class RequestPasswordResetUseCaseImpl implements RequestPasswordResetUseC
 
     @Override
     public void execute(Long userId, String token, int minutesValid) {
-        userGateway.RequestPasswordResetUseCase(userId, token, minutesValid);
+        userGateway.requestPasswordResetUseCase(userId, token, minutesValid);
     }
 
 }

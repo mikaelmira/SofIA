@@ -15,7 +15,7 @@ public class PatchUserUseCaseImpl implements PatchUserUseCase {
 
     @Override
     public User execute(Long id, Map<String, Object> params) {
-        return userGateway.PatchUserUseCase(id, params);
+        return userGateway.patchUserUseCase(id, params);
     }
 
 }

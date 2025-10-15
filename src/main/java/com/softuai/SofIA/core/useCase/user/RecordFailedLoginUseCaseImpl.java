@@ -12,7 +12,7 @@ public class RecordFailedLoginUseCaseImpl implements RecordFailedLoginUseCase {
 
     @Override
     public void execute(Long id) {
-        userGateway.RecordFailedLoginUseCase(id);
+        userGateway.recordFailedLoginUseCase(id);
     }
 
 }

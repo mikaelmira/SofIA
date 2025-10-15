@@ -6,14 +6,14 @@ import java.util.Map;
 
 public interface UserGateway {
 
-    void BlocUserUseCase(Long id);
-    void ChangePasswordUseCase(Long id, String currentPassword, String newPassword);
-    User CreateUserUseCase(User user);
-    User GetUserByIdUseCase(Long id);
-    User PatchUserUseCase(Long id, Map<String, Object> params);
-    void RecordFailedLoginUseCase(Long id);
-    void RequestPasswordResetUseCase(Long userId, String token, int minutesValid);
-    void ResetPasswordUseCase(Long id, String token, String newPassword);
-    void UnblockUserUseCase(Long id);
+    void blockUserUseCase(Long id);
+    void changePasswordUseCase(Long id, String currentPassword, String newPassword);
+    User createUserUseCase(User user);
+    User getUserByIdUseCase(Long id);
+    User patchUserUseCase(Long id, Map<String, Object> params);
+    void recordFailedLoginUseCase(Long id);
+    void requestPasswordResetUseCase(Long userId, String token, int minutesValid);
+    void resetPasswordUseCase(Long id, String token, String newPassword);
+    void unblockUserUseCase(Long id);
 
 }

@@ -13,7 +13,7 @@ public class GetUserByIdUseCaseImpl implements GetUserByIdUseCase {
 
     @Override
     public User execute(Long id) {
-        return userGateway.GetUserByIdUseCase(id);
+        return userGateway.getUserByIdUseCase(id);
     }
 
 }

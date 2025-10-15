@@ -12,7 +12,7 @@ public class BlockUserUseCaseImpl implements BlockUserUseCase {
 
     @Override
     public void execute(Long id) {
-        userGateway.BlocUserUseCase(id);
+        userGateway.blockUserUseCase(id);
     }
 
 }

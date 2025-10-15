@@ -12,7 +12,7 @@ public class ChangePasswordUseCaseImpl implements ChangePasswordUseCase {
 
     @Override
     public void execute(Long id, String currentPassword, String newPassword) {
-        userGateway.ChangePasswordUseCase(id, currentPassword, newPassword);
+        userGateway.changePasswordUseCase(id, currentPassword, newPassword);
     }
 
 }

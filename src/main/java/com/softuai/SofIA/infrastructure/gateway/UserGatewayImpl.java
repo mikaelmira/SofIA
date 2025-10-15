@@ -16,49 +16,49 @@ public class UserGatewayImpl implements UserGateway {
     private final UserCoreMapper userCoreMapper;
 
     @Override
-    public void BlocUserUseCase(Long id) {
+    public void blockUserUseCase(Long id) {
 
     }
 
     @Override
-    public void ChangePasswordUseCase(Long id, String currentPassword, String newPassword) {
+    public void changePasswordUseCase(Long id, String currentPassword, String newPassword) {
 
     }
 
     @Override
-    public User CreateUserUseCase(User user) {
+    public User createUserUseCase(User user) {
         UserEntity entityToSave = userCoreMapper.toEntity(user);
         UserEntity savedEntity = userRepository.save(entityToSave);
         return userCoreMapper.toCore(savedEntity);
     }
 
     @Override
-    public User GetUserByIdUseCase(Long id) {
+    public User getUserByIdUseCase(Long id) {
         return null;
     }
 
     @Override
-    public User PatchUserUseCase(Long id, Map<String, Object> params) {
+    public User patchUserUseCase(Long id, Map<String, Object> params) {
         return null;
     }
 
     @Override
-    public void RecordFailedLoginUseCase(Long id) {
+    public void recordFailedLoginUseCase(Long id) {
 
     }
 
     @Override
-    public void RequestPasswordResetUseCase(Long userId, String token, int minutesValid) {
+    public void requestPasswordResetUseCase(Long userId, String token, int minutesValid) {
 
     }
 
     @Override
-    public void ResetPasswordUseCase(Long id, String token, String newPassword) {
+    public void resetPasswordUseCase(Long id, String token, String newPassword) {
 
     }
 
     @Override
-    public void UnblockUserUseCase(Long id) {
+    public void unblockUserUseCase(Long id) {
 
     }
 }
