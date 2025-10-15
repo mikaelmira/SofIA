@@ -6,9 +6,11 @@ import com.softuai.SofIA.infrastructure.mapper.user.UserCoreMapper;
 import com.softuai.SofIA.infrastructure.persistence.entity.UserEntity;
 import com.softuai.SofIA.infrastructure.persistence.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
+@Component
 @RequiredArgsConstructor
 public class UserGatewayImpl implements UserGateway {
 
