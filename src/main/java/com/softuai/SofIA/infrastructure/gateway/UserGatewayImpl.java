@@ -2,10 +2,18 @@ package com.softuai.SofIA.infrastructure.gateway;
 
 import com.softuai.SofIA.core.entity.User;
 import com.softuai.SofIA.core.gateway.UserGateway;
+import com.softuai.SofIA.infrastructure.mapper.user.UserCoreMapper;
+import com.softuai.SofIA.infrastructure.persistence.entity.UserEntity;
+import com.softuai.SofIA.infrastructure.persistence.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
 
 import java.util.Map;
 
+@RequiredArgsConstructor
 public class UserGatewayImpl implements UserGateway {
+
+    private final UserRepository userRepository;
+    private final UserCoreMapper userCoreMapper;
 
     @Override
     public void BlocUserUseCase(Long id) {
@@ -19,7 +27,9 @@ public class UserGatewayImpl implements UserGateway {
 
     @Override
     public User CreateUserUseCase(User user) {
-        return null;
+        UserEntity entityToSave = userCoreMapper.toEntity(user);
+        UserEntity savedEntity = userRepository.save(entityToSave);
+        return userCoreMapper.toCore(savedEntity);
     }
 
     @Override
