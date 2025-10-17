@@ -17,7 +17,7 @@ public class CreateUserUseCaseImpl implements CreateUserUseCase {
         User fabricatedUser = UserFactory.create(
                 user.name(),
                 user.email(),
-                user.password(),
+                userGateway.encodePasswordUseCase(user.password()),
                 user.profilePicture(),
                 user.phone(),
                 user.birthday()

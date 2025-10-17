@@ -2,6 +2,7 @@ package com.softuai.SofIA.infrastructure.gateway;
 
 import com.softuai.SofIA.core.entity.User;
 import com.softuai.SofIA.core.gateway.UserGateway;
+import com.softuai.SofIA.infrastructure.configuration.security.Argon2PasswordEncoder;
 import com.softuai.SofIA.infrastructure.mapper.user.UserCoreMapper;
 import com.softuai.SofIA.infrastructure.persistence.entity.UserEntity;
 import com.softuai.SofIA.infrastructure.persistence.repository.UserRepository;
@@ -16,6 +17,7 @@ public class UserGatewayImpl implements UserGateway {
 
     private final UserRepository userRepository;
     private final UserCoreMapper userCoreMapper;
+    private final Argon2PasswordEncoder argon2PasswordEncoder;
 
     @Override
     public void blockUserUseCase(Long id) {
@@ -62,5 +64,15 @@ public class UserGatewayImpl implements UserGateway {
     @Override
     public void unblockUserUseCase(Long id) {
 
+    }
+
+    @Override
+    public String encodePasswordUseCase(String password) {
+        return argon2PasswordEncoder.encode(password);
+    }
+
+    @Override
+    public boolean matchPasswordUseCase(String password, String databasePassword) {
+        return false;
     }
 }

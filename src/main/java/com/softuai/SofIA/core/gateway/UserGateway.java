@@ -15,5 +15,7 @@ public interface UserGateway {
     void requestPasswordResetUseCase(Long userId, String token, int minutesValid);
     void resetPasswordUseCase(Long id, String token, String newPassword);
     void unblockUserUseCase(Long id);
+    String encodePasswordUseCase(String password);
+    boolean matchPasswordUseCase(String password, String databasePassword);
 
 }
