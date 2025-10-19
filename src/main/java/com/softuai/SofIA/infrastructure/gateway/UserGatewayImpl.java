@@ -6,6 +6,7 @@ import com.softuai.SofIA.infrastructure.configuration.security.Argon2PasswordEnc
 import com.softuai.SofIA.infrastructure.mapper.user.UserCoreMapper;
 import com.softuai.SofIA.infrastructure.persistence.entity.UserEntity;
 import com.softuai.SofIA.infrastructure.persistence.repository.UserRepository;
+import com.softuai.SofIA.infrastructure.util.EncryptionUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +19,7 @@ public class UserGatewayImpl implements UserGateway {
     private final UserRepository userRepository;
     private final UserCoreMapper userCoreMapper;
     private final Argon2PasswordEncoder argon2PasswordEncoder;
+    private final EncryptionUtil encryptionUtil;
 
     @Override
     public void blockUserUseCase(Long id) {

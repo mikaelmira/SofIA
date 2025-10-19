@@ -1,6 +1,7 @@
 package com.softuai.SofIA.infrastructure.persistence.entity;
 
 import com.softuai.SofIA.core.enums.AccountStatus;
+import com.softuai.SofIA.infrastructure.util.EncryptionConverter;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -35,12 +36,14 @@ public class UserEntity {
     @NotBlank(message = "Name cannot be blank")
     @Size(min = 2, max = 100, message = "Name must be between 2 and 100 characters")
     @Column(name = "name", nullable = false)
+    @Convert(converter = EncryptionConverter.class)
     private String name;
 
     @Email(message = "Invalid email format")
     @NotBlank(message = "Email cannot be blank")
     @Size(max = 120, message = "Email 120 characters")
-    @Column(name = "email", nullable = false, unique = true, length = 120)
+    @Column(name = "email", nullable = false, unique = true, length = 255)
+    @Convert(converter = EncryptionConverter.class)
     private String email;
 
     @NotBlank(message = "Password cannot be blank")
@@ -55,7 +58,8 @@ public class UserEntity {
             regexp = "^(\\+\\d{1,3}\\s?)?(\\(\\d{2,3}\\)\\s?)?\\d{4,5}-\\d{4}$",
             message = "Invalid phone format"
     )
-    @Column(name = "phone", nullable = false, unique = true, length = 20)
+    @Column(name = "phone", nullable = false, unique = true, length = 255)
+    @Convert(converter = EncryptionConverter.class)
     private String phone;
 
     @Column(name = "login_attempts", nullable = false)
